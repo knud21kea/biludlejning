@@ -3,27 +3,27 @@ package uds.knudsoft;
 public class Benzinebil extends Bil {
 
     int octaneRating;
-    double kmPr;
+    double kmPrL;
 
-    public Benzinebil(String regNr, String make, String model, int year, int numberOfDoors, int octaneRating, double kmPr) {
+    public Benzinebil(String regNr, String make, String model, int year, int numberOfDoors, int octaneRating, double kmPrL) {
         super(regNr, make, model, year, numberOfDoors);
         this.octaneRating = octaneRating;
-        this.kmPr = kmPr;
+        this.kmPrL = kmPrL;
     }
 
     @Override
     public double calculateGreenSurcharge() {
         double afgift = 330;
-        if (kmPr < 20) {
+        if (kmPrL < 20) {
             afgift = 1050;
         }
-        if (kmPr < 15) {
+        if (kmPrL < 15) {
             afgift = 2340;
         }
-        if (kmPr < 10) {
+        if (kmPrL < 10) {
             afgift = 5500;
         }
-        if (kmPr < 5) {
+        if (kmPrL < 5) {
             afgift = 10470;
         }
         return afgift;
@@ -51,7 +51,7 @@ public class Benzinebil extends Bil {
                 "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
                 "\nReg number: " + regNr +
                 "\nMotor: Petrol, Octane rating: " + octaneRating +
-                "\nKm/l: " + kmPr +
+                "\nKm/l: " + kmPrL +
                 "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
 }

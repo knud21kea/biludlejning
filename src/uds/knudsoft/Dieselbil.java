@@ -3,27 +3,27 @@ package uds.knudsoft;
 public class Dieselbil extends Bil {
 
     boolean hasParticleFilter;
-    double kmPr;
+    double kmPrL;
 
-    public Dieselbil(String regNr, String make, String model, int year, int numberOfDoors, boolean hasParticleFilter, double kmPr) {
+    public Dieselbil(String regNr, String make, String model, int year, int numberOfDoors, boolean hasParticleFilter, double kmPrL) {
         super(regNr, make, model, year, numberOfDoors);
         this.hasParticleFilter = hasParticleFilter;
-        this.kmPr = kmPr;
+        this.kmPrL = kmPrL;
     }
 
     @Override
     public double calculateGreenSurcharge() {
         double afgift = 330 + 130; // Petrol car + emissions surcharge
-        if (kmPr < 20) {
+        if (kmPrL < 20) {
             afgift = 1050 + 1390;
         }
-        if (kmPr < 15) {
+        if (kmPrL < 15) {
             afgift = 2340 + 1850;
         }
-        if (kmPr < 10) {
+        if (kmPrL < 10) {
             afgift = 5500 + 2770;
         }
-        if (kmPr < 5) {
+        if (kmPrL < 5) {
             afgift = 10470 + 15260;
         }
         if (!hasParticleFilter) {
@@ -54,7 +54,7 @@ public class Dieselbil extends Bil {
                 "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
                 "\nReg number: " + regNr +
                 "\nEngine: Diesel, has particle filter? " + hasParticleFilter +
-                "\nKm/l: " + kmPr +
+                "\nKm/l: " + kmPrL +
                 "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
 }

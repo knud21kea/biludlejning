@@ -2,19 +2,19 @@ package uds.knudsoft;
 
 public class Elbil extends Bil {
 
-    double batteryCapacityKWh, maxKm, whPrKm;
+    double batteryCapacityKWh, maxKm, kwhPrKm;
 
-    public Elbil(String regNr, String make, String model, int year, int numberOfDoors, double batteryCapacityKWh, double maxKm, double whPrKm) {
+    public Elbil(String regNr, String make, String model, int year, int numberOfDoors, double batteryCapacityKWh, double maxKm, double kwhPrKm) {
         super(regNr, make, model, year, numberOfDoors);
         this.batteryCapacityKWh = batteryCapacityKWh;
         this.maxKm = maxKm;
-        this.whPrKm = whPrKm;
+        this.kwhPrKm = kwhPrKm;
     }
 
     @Override
     public double calculateGreenSurcharge() {
         double afgift = 330;
-        double kmPr = 100/(whPrKm/91.25);
+        double kmPr = 100/(kwhPrKm /91.25);
         if (kmPr < 20) {
             afgift = 1050;
         }
@@ -60,7 +60,7 @@ public class Elbil extends Bil {
                 "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
                 "\nReg number: " + regNr +
                 "\nMotor: Electric, Battery capacity: " + batteryCapacityKWh + "KWh" +
-                ", Wh per km: " + whPrKm +
+                ", kWh per km: " + kwhPrKm +
                 ", Max km: " + maxKm + "Km" +
                 "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
