@@ -12,15 +12,12 @@ public class Test {
 
         System.out.println(bil1);
         garage.addCar(bil1);
-        System.out.println("afgift for reg: " + bil1.regNr + " er: " + bil1.beregnGrønEjerafgift() + " kr.");
 
         System.out.println(bil2);
         garage.addCar(bil2);
-        System.out.println("afgift for reg: " + bil2.regNr + " er: " + bil2.beregnGrønEjerafgift() + " kr.");
 
         System.out.println(bil3);
         garage.addCar(bil3);
-        System.out.println("afgift for reg: " + bil3.regNr + " er: " + bil3.beregnGrønEjerafgift() + " kr.");
 
         System.out.println("\n" + garage); // not sure how much data here, outputting make, model and reg
         }

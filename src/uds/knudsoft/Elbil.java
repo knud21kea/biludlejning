@@ -55,15 +55,12 @@ public class Elbil extends Bil {
     }
     @Override
     public String toString() {
-        return "El bil [" +
-                " reg: " + regNr +
-                ", mærke: " + mærke +
-                ", model: " + model +
-                ", årgang: " + årgang +
-                ", antal døre: " + antalDøre +
-                ", batteri kapacitet: " + batterikapacitetKWh +
-                ", max km: " + maxKm +
-                ", wh per km: " + whPrKm +
-                ']';
+        return "\nBil info:" +
+                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
+                "\nReg nummer: " + regNr +
+                "\nMotor: El, Batteri kapacitet: " + batterikapacitetKWh + "KWh" +
+                ", Wh per km: " + whPrKm +
+                ", Max km: " + maxKm + "Km" +
+                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
     }
 }

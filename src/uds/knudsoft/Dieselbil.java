@@ -50,14 +50,11 @@ public class Dieselbil extends Bil {
 
     @Override
     public String toString() {
-        return "Diesel bil [" +
-                " reg: " + regNr +
-                ", mærke: " + mærke +
-                ", model: " + model +
-                ", årgang: " + årgang +
-                ", antal døre: " + antalDøre +
-                ", har partikel filter: " + harPartikelfilter +
-                ", kmPr: " + kmPr +
-                ']';
+        return "\nBil info:" +
+                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
+                "\nReg nummer: " + regNr +
+                "\nMotor: Diesel, har partikel filter? " + harPartikelfilter +
+                "\nKm/l: " + kmPr +
+                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
     }
 }

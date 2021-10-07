@@ -47,14 +47,11 @@ public class Benzinebil extends Bil {
 
     @Override
     public String toString() {
-        return "Benzine bil [" +
-                " reg: " + regNr +
-                ", mærke: " + mærke +
-                ", model: " + model +
-                ", årgang: " + årgang +
-                ", antal døre: " + antalDøre +
-                ", oktantal: " + oktantal +
-                ", kmPr: " + kmPr +
-        ']';
+        return "\nBil info:" +
+                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
+                "\nReg nummer: " + regNr +
+                "\nMotor: Benzine, Oktanetal: " + oktantal +
+                "\nKm/l: " + kmPr +
+                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
     }
 }

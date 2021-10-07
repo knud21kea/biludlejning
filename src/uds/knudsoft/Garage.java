@@ -24,11 +24,11 @@ public class Garage {
     }
 
     public String formatOutput() {
-        String carList = "";
+        StringBuilder carList = new StringBuilder();
         for (int i = 0; i < carPark.size(); i++) {
-           carList += carPark.get(i).mærke + " " + carPark.get(i).model + ": Reg " + carPark.get(i).regNr + "\n";
+           carList.append(carPark.get(i).mærke).append(" ").append(carPark.get(i).model).append(": Reg ").append(carPark.get(i).regNr).append("\n");
         }
-        return carList;
+        return carList.toString();
     }
 
     @Override
