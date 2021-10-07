@@ -23,9 +23,18 @@ public class Garage {
         return afgift;
     }
 
+    public String formatOutput() {
+        String carList = "";
+        for (int i = 0; i < carPark.size(); i++) {
+           carList += carPark.get(i).mærke + " " + carPark.get(i).model + ": Reg " + carPark.get(i).regNr + "\n";
+        }
+        return carList;
+    }
+
     @Override
     public String toString() {
-        return garageName + "[ " +
-                "parked cars: " + carPark;
+        return garageName +
+                " har disse biler:\n" + formatOutput() +
+                "\nDen samlede afgift er: " + beregnGrønAfgiftForBilpark() + " kr.";
     }
 }
