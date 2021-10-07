@@ -29,7 +29,7 @@ public class Benzinebil extends Bil {
         return afgift;
     }
 
-    public int getOktantal() {
+    /*public int getOktantal() {
         return oktantal;
     }
 
@@ -43,11 +43,11 @@ public class Benzinebil extends Bil {
 
     public void setKmPr(int kmPr) {
         this.kmPr = kmPr;
-    }
+    }*/
 
     @Override
     public String toString() {
-        return "Benzinebil[" +
+        return "Benzine bil [" +
                 " reg: " + regNr +
                 ", mærke: " + mærke +
                 ", model: " + model +

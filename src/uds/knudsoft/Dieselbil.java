@@ -32,7 +32,7 @@ public class Dieselbil extends Bil {
         return afgift;
     }
 
-    public boolean isHarPartikelfilter() {
+    /*public boolean isHarPartikelfilter() {
         return harPartikelfilter;
     }
 
@@ -46,11 +46,11 @@ public class Dieselbil extends Bil {
 
     public void setKmPr(int kmPr) {
         this.kmPr = kmPr;
-    }
+    }*/
 
     @Override
     public String toString() {
-        return "Diesel bil[" +
+        return "Diesel bil [" +
                 " reg: " + regNr +
                 ", mærke: " + mærke +
                 ", model: " + model +

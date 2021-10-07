@@ -4,7 +4,6 @@ public abstract class Bil {
 
     String regNr, mærke, model;
     int årgang, antalDøre;
-    double afgift;
 
     public Bil (String regNr, String mærke, String model, int årgang, int antalDøre) {
         this.regNr = regNr;

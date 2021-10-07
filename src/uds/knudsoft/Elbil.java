@@ -30,7 +30,7 @@ public class Elbil extends Bil {
         return afgift;
     }
 
-    public double getBatterikapacitetKWh() {
+    /*public double getBatterikapacitetKWh() {
         return batterikapacitetKWh;
     }
 
@@ -48,14 +48,14 @@ public class Elbil extends Bil {
 
     public double getWhPrKm() {
         return whPrKm;
-    }
+    }*/
 
     public void setWhPrKm(int whPrKm) {
         this.whPrKm = whPrKm;
     }
     @Override
     public String toString() {
-        return "Diesel bil[" +
+        return "El bil [" +
                 " reg: " + regNr +
                 ", mærke: " + mærke +
                 ", model: " + model +
