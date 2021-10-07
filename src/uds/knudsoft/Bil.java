@@ -2,16 +2,16 @@ package uds.knudsoft;
 
 public abstract class Bil {
 
-    String regNr, mærke, model;
-    int årgang, antalDøre;
+    String regNr, make, model;
+    int year, numberOfDoors;
 
-    public Bil (String regNr, String mærke, String model, int årgang, int antalDøre) {
+    public Bil (String regNr, String make, String model, int year, int numberOfDoors) {
         this.regNr = regNr;
-        this.mærke = mærke;
+        this.make = make;
         this.model = model;
-        this.årgang = årgang;
-        this.antalDøre = antalDøre;
+        this.year = year;
+        this.numberOfDoors = numberOfDoors;
     }
 
-    abstract double beregnGrønEjerafgift();
+    abstract double calculateGreenSurcharge();
 }

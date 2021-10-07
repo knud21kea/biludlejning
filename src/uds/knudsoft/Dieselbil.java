@@ -2,18 +2,18 @@ package uds.knudsoft;
 
 public class Dieselbil extends Bil {
 
-    boolean harPartikelfilter;
+    boolean hasParticleFilter;
     double kmPr;
 
-    public Dieselbil(String regNr, String mærke, String model, int årgang, int antalDøre, boolean harPartikelfilter, double kmPr) {
-        super(regNr, mærke, model, årgang, antalDøre);
-        this.harPartikelfilter = harPartikelfilter;
+    public Dieselbil(String regNr, String make, String model, int year, int numberOfDoors, boolean hasParticleFilter, double kmPr) {
+        super(regNr, make, model, year, numberOfDoors);
+        this.hasParticleFilter = hasParticleFilter;
         this.kmPr = kmPr;
     }
 
     @Override
-    public double beregnGrønEjerafgift() {
-        double afgift = 330 + 130; // Benzinebil + udligningsafgift
+    public double calculateGreenSurcharge() {
+        double afgift = 330 + 130; // Petrol car + emissions surcharge
         if (kmPr < 20) {
             afgift = 1050 + 1390;
         }
@@ -26,8 +26,8 @@ public class Dieselbil extends Bil {
         if (kmPr < 5) {
             afgift = 10470 + 15260;
         }
-        if (!harPartikelfilter) {
-            afgift += 1000; // partikeludledningsafgift
+        if (!hasParticleFilter) {
+            afgift += 1000; // particle surcharge
         }
         return afgift;
     }
@@ -50,11 +50,11 @@ public class Dieselbil extends Bil {
 
     @Override
     public String toString() {
-        return "\nBil info:" +
-                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
-                "\nReg nummer: " + regNr +
-                "\nMotor: Diesel, har partikel filter? " + harPartikelfilter +
+        return "\nCar info:" +
+                "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
+                "\nReg number: " + regNr +
+                "\nEngine: Diesel, has particle filter? " + hasParticleFilter +
                 "\nKm/l: " + kmPr +
-                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
+                "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
 }

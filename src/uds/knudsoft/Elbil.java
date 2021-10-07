@@ -2,17 +2,17 @@ package uds.knudsoft;
 
 public class Elbil extends Bil {
 
-    double batterikapacitetKWh, maxKm, whPrKm;
+    double batteryCapacityKWh, maxKm, whPrKm;
 
-    public Elbil(String regNr, String mærke, String model, int årgang, int antalDøre, double batterikapacitetKWh, double maxKm, double whPrKm) {
-        super(regNr, mærke, model, årgang, antalDøre);
-        this.batterikapacitetKWh = batterikapacitetKWh;
+    public Elbil(String regNr, String make, String model, int year, int numberOfDoors, double batteryCapacityKWh, double maxKm, double whPrKm) {
+        super(regNr, make, model, year, numberOfDoors);
+        this.batteryCapacityKWh = batteryCapacityKWh;
         this.maxKm = maxKm;
         this.whPrKm = whPrKm;
     }
 
     @Override
-    public double beregnGrønEjerafgift() {
+    public double calculateGreenSurcharge() {
         double afgift = 330;
         double kmPr = 100/(whPrKm/91.25);
         if (kmPr < 20) {
@@ -48,19 +48,20 @@ public class Elbil extends Bil {
 
     public double getWhPrKm() {
         return whPrKm;
-    }*/
+    }
 
     public void setWhPrKm(int whPrKm) {
         this.whPrKm = whPrKm;
-    }
+    }*/
+
     @Override
     public String toString() {
-        return "\nBil info:" +
-                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
-                "\nReg nummer: " + regNr +
-                "\nMotor: El, Batteri kapacitet: " + batterikapacitetKWh + "KWh" +
+        return "\nCar info:" +
+                "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
+                "\nReg number: " + regNr +
+                "\nMotor: Electric, Battery capacity: " + batteryCapacityKWh + "KWh" +
                 ", Wh per km: " + whPrKm +
                 ", Max km: " + maxKm + "Km" +
-                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
+                "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
 }

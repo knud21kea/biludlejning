@@ -2,17 +2,17 @@ package uds.knudsoft;
 
 public class Benzinebil extends Bil {
 
-    int oktantal;
+    int octaneRating;
     double kmPr;
 
-    public Benzinebil(String regNr, String mærke, String model, int årgang, int antalDøre, int oktantal, double kmPr) {
-        super(regNr, mærke, model, årgang, antalDøre);
-        this.oktantal = oktantal;
+    public Benzinebil(String regNr, String make, String model, int year, int numberOfDoors, int octaneRating, double kmPr) {
+        super(regNr, make, model, year, numberOfDoors);
+        this.octaneRating = octaneRating;
         this.kmPr = kmPr;
     }
 
     @Override
-    public double beregnGrønEjerafgift() {
+    public double calculateGreenSurcharge() {
         double afgift = 330;
         if (kmPr < 20) {
             afgift = 1050;
@@ -47,11 +47,11 @@ public class Benzinebil extends Bil {
 
     @Override
     public String toString() {
-        return "\nBil info:" +
-                "\nMærke/Model: " + mærke + " " + model + ", " + antalDøre + "-døre " + årgang +
-                "\nReg nummer: " + regNr +
-                "\nMotor: Benzine, Oktanetal: " + oktantal +
+        return "\nCar info:" +
+                "\nMake/Model: " + make + " " + model + ", " + numberOfDoors + "-door " + year +
+                "\nReg number: " + regNr +
+                "\nMotor: Petrol, Octane rating: " + octaneRating +
                 "\nKm/l: " + kmPr +
-                "\nAfgift: " + beregnGrønEjerafgift() + " kr.";
+                "\nSurcharge: " + calculateGreenSurcharge() + " kr.";
     }
 }
