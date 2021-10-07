@@ -4,7 +4,7 @@ public class Elbil extends Bil {
 
     double batterikapacitetKWh, maxKm, whPrKm;
 
-    public Elbil(String regNr, String mærke, String model, int årgang, int antalDøre) {
+    public Elbil(String regNr, String mærke, String model, int årgang, int antalDøre, double batterikapacitetKWh, double maxKm, double whPrKm) {
         super(regNr, mærke, model, årgang, antalDøre);
         this.batterikapacitetKWh = batterikapacitetKWh;
         this.maxKm = maxKm;
@@ -52,5 +52,18 @@ public class Elbil extends Bil {
 
     public void setWhPrKm(int whPrKm) {
         this.whPrKm = whPrKm;
+    }
+    @Override
+    public String toString() {
+        return "Diesel bil[" +
+                " reg: " + regNr +
+                ", mærke: " + mærke +
+                ", model: " + model +
+                ", årgang: " + årgang +
+                ", antal døre: " + antalDøre +
+                ", batteri kapacitet: " + batterikapacitetKWh +
+                ", max km: " + maxKm +
+                ", wh per km: " + whPrKm +
+                ']';
     }
 }

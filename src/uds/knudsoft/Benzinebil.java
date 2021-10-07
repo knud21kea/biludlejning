@@ -48,7 +48,7 @@ public class Benzinebil extends Bil {
     @Override
     public String toString() {
         return "Benzinebil[" +
-                ", reg: " + regNr +
+                " reg: " + regNr +
                 ", mærke: " + mærke +
                 ", model: " + model +
                 ", årgang: " + årgang +

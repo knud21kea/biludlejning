@@ -3,9 +3,9 @@ package uds.knudsoft;
 public class Dieselbil extends Bil {
 
     boolean harPartikelfilter;
-    int kmPr;
+    double kmPr;
 
-    public Dieselbil(String regNr, String mærke, String model, int årgang, int antalDøre) {
+    public Dieselbil(String regNr, String mærke, String model, int årgang, int antalDøre, boolean harPartikelfilter, double kmPr) {
         super(regNr, mærke, model, årgang, antalDøre);
         this.harPartikelfilter = harPartikelfilter;
         this.kmPr = kmPr;
@@ -40,11 +40,24 @@ public class Dieselbil extends Bil {
         this.harPartikelfilter = harPartikelfilter;
     }
 
-    public int getKmPr() {
+    public double getKmPr() {
         return kmPr;
     }
 
     public void setKmPr(int kmPr) {
         this.kmPr = kmPr;
+    }
+
+    @Override
+    public String toString() {
+        return "Diesel bil[" +
+                " reg: " + regNr +
+                ", mærke: " + mærke +
+                ", model: " + model +
+                ", årgang: " + årgang +
+                ", antal døre: " + antalDøre +
+                ", har partikel filter: " + harPartikelfilter +
+                ", kmPr: " + kmPr +
+                ']';
     }
 }
